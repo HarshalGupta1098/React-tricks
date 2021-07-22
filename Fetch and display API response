@@ -1,0 +1,24 @@
+import React, { useEffect, useState } from "react";
+
+function C1() {
+
+  // This will hold and set the response
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    fetch("https://catfact.ninja/fact")
+      // This will convert the response to json format.
+      .then((res) => res.json())
+      // This will set data with json response
+      .then((res) => setData(res));
+  }, []);
+
+  // console.log(data);
+  const jsonStr = JSON.stringify(data);
+  return <div>{jsonStr}</div>;
+}
+
+export default C1;
+
+
+
