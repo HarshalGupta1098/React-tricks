@@ -1,0 +1,63 @@
+import React from "react";
+
+const data = [
+  {
+    name: "abcd",
+    id: 10,
+    detail: [
+      {
+        email: "abcd@gmail.com",
+        contact: 1234
+      }
+    ]
+  },
+
+  {
+    name: "pqrs",
+    id: 11,
+    detail: [
+      {
+        email: "pqrs@gmail.com",
+        contact: 1456
+      }
+    ]
+  },
+
+  {
+    name: "xyz",
+    id: 13,
+    detail: [
+      {
+        email: "xyz@gmail.com",
+        contact: 5687
+      }
+    ]
+  }
+];
+
+function C1() {
+  return (
+    <div>
+      {/* You can access each element of data array using item */}
+      {data.map((item) => (
+        // It is mandatory to use an HTML tag (like <div>) to wrap multiple JSX components
+        // Thats's why, I have wrapped {item.name}, {item.id} using <div>
+        // Same goes for {subItem.email}, {subItem.contact}
+        <div>
+          <h4>{item.name}</h4>
+          <h4>{item.id}</h4>
+          {/* You can access each element of detail array using subItem */}
+          {item.detail.map((subItem) => (
+            <div>
+              <li>{subItem.email}</li>
+              <li>{subItem.contact}</li>
+            </div>
+          ))}
+          <hr />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default C1;
