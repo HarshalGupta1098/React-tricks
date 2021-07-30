@@ -1,0 +1,28 @@
+const person = {
+  name: {
+    first: "ABCD",
+    last: "abcd"
+  },
+  address: {
+    city: "AB",
+    state: "A"
+  }
+};
+
+// Function to check if "val" is an object or not
+const isObject = (val) => {
+    if (val === null) return false;
+    return typeof val === "object";
+  };
+
+// Function to iterate nested object recursively
+let iter = (obj) => {
+    for (let val in obj) {
+      if (isObject(obj[val])) iter(obj[val]);
+      else console.log(val, obj[val]);
+    }
+  };
+
+  iter(person);
+  
+  PS: This code is working fine, but, it prints the data 2 times. Would be happy if someone can point the mistake ^_^
