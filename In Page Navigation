@@ -1,0 +1,23 @@
+import React from 'react'
+import './Header.css'
+import { Link } from 'react-scroll'
+
+function Header() { 
+
+    return (
+        <div className="header">
+            <div className="header__navbarLogo">
+            <Link  to="home" spy={true} smooth={true}>W e H a i r</Link>
+            </div>
+            <div className="header__navbar">
+                {/* about can be either className or id */}
+                <Link  to="about" spy={true} smooth={true}>About</Link>
+                <Link  to="service" spy={true} smooth={true}>Services</Link>
+                <Link  to="contact" spy={true} smooth={true}>Contact</Link>
+            </div>
+
+        </div>
+    )
+}
+
+export default Header
